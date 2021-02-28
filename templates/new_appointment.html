@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <body>
+   
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+          <h3>Add a new appointment!</h3>
+          <hr/>
+          <form action = "{{ request.path }}" method = "post">
+             <label for = "physician_id">Physician ID</label><br>
+             <input type = "text" name = "physician_id" placeholder="Their number in the homepage list" style="width: 300px;"/>
+             <br><br>
+
+             <label for = "patient_name">Patient Name</label><br>
+             <input type = "text" name = "patient_name" placeholder="Full Name" style="width: 300px;"/>
+             <br><br>
+             <label for = "appointment_time">Appointment Time</label><br>
+             <input type = "text" name = "appointment_time" placeholder="Ex: 8:00AM" style="width: 300px;"/>
+
+             <br><br>
+             <label for = "appointment_type">Appointment Type</label><br>
+             <input type = "text" name = "appointment_type" placeholder="Ex: Check Up" style="width: 300px;"/>
+
+             <br><br>
+             <input type = "submit" value = "Submit" />
+          </form>
+      </div>
+      <div class="col-md-3"></div>
+      
+   </body>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</html>
